@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>世界新闻简报 · 2026年8月16日</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --paper-2: #fbf7f0;
+      --ink: #1c1814;
+      --muted: #5e574f;
+      --faint: #8a8278;
+      --line: #ddd3c4;
+      --line-strong: #cfc3b2;
+      --accent: #8b2420;
+      --accent-soft: #f1e4dc;
+      --shadow: 0 1px 0 rgba(28, 24, 20, 0.04), 0 8px 24px rgba(28, 24, 20, 0.04);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3.25rem;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 400px at 50% -80px, rgba(139, 36, 32, 0.05), transparent 60%),
+        var(--paper);
+      color: var(--ink);
+      font-family: system-ui, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    .page {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 1.5rem 1.15rem 3.75rem;
+    }
+
+    .masthead {
+      padding: 0.35rem 0 1.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0 0 0.7rem;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.32em;
+    }
+
+    .kicker::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.28;
+    }
+
+    .masthead h1 {
+      margin: 0;
+      font-size: clamp(1.85rem, 5.5vw, 2.55rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+    }
+
+    .dateline {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+    }
+
+    .dateline .tz {
+      color: var(--faint);
+    }
+
+    .lede {
+      margin: 1.35rem 0 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+
+    .note {
+      margin: 0.95rem 0 0;
+      padding: 0.7rem 0.85rem;
+      background: var(--accent-soft);
+      border-left: 2px solid var(--accent);
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .flash {
+      margin: 0.7rem 0 0;
+      color: var(--faint);
+      font-size: 0.8rem;
+    }
+
+    .flash strong {
+      color: var(--accent);
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      margin-right: 0.4rem;
+    }
+
+    nav.toc {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 0 -1.15rem;
+      padding: 0.55rem 1.15rem;
+      background: color-mix(in srgb, var(--paper) 86%, white);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav.toc ul {
+      display: flex;
+      gap: 0.15rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    nav.toc ul::-webkit-scrollbar { display: none; }
+
+    nav.toc a {
+      display: inline-block;
+      padding: 0.28rem 0.62rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 550;
+      text-decoration: none;
+      white-space: nowrap;
+      border-radius: 999px;
+    }
+
+    nav.toc a:hover {
+      color: var(--accent);
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 1.85rem 0 0.4rem;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.85rem;
+      margin: 0 0 1.05rem;
+    }
+
+    .sec-head h2 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+    }
+
+    .sec-head::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line-strong);
+      transform: translateY(-0.15em);
+    }
+
+    .sec-note {
+      margin: -0.35rem 0 1rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .card {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.15rem 1.15rem 1.1rem;
+      margin: 0 0 0.8rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.08rem;
+      font-weight: 650;
+      letter-spacing: -0.018em;
+      line-height: 1.38;
+    }
+
+    .card p {
+      margin: 0 0 0.75rem;
+      color: #2c2824;
+      font-size: 0.94rem;
+      line-height: 1.72;
+    }
+
+    .sources {
+      margin: 0;
+      color: var(--faint);
+      font-size: 0.78rem;
+    }
+
+    .sources a {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .sources .dot {
+      margin: 0 0.28rem;
+      color: var(--line-strong);
+    }
+
+    footer {
+      margin-top: 2.4rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--line);
+      color: var(--faint);
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    @media (min-width: 640px) {
+      .page { padding: 2.1rem 1.5rem 4.25rem; }
+      nav.toc { margin: 0 -1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+      .lede { font-size: 1.08rem; }
+      .card { padding: 1.25rem 1.3rem 1.15rem; }
+      .card h3 { font-size: 1.14rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <p class="kicker">WORLD BRIEFING</p>
+      <h1>世界新闻简报</h1>
+      <p class="dateline">2026年8月16日 星期日 <span class="tz">· 北京时间</span></p>
+      <p class="lede">美伊围绕霍尔木兹海峡的僵局未解、俄乌双方大规模空袭对打、印尼弗洛勒斯 7.7 级强震死亡人数仍在上升，是今天全球最突出的三条主线。</p>
+      <p class="note">今日休市；财经为周五收盘。伤亡数字仍可能变化。</p>
+      <p class="flash"><strong>快讯</strong>印尼地震死亡人数、俄乌空袭伤亡、霍尔木兹通航谈判仍在变。</p>
+    </header>
+
+    <nav class="toc" aria-label="栏目">
+      <ul>
+        <li><a href="#guoji">国际</a></li>
+        <li><a href="#zhengzhi">政治</a></li>
+        <li><a href="#caijing">财经</a></li>
+        <li><a href="#keji">科技</a></li>
+        <li><a href="#kexue">科学</a></li>
+        <li><a href="#tiyu">体育</a></li>
+        <li><a href="#shehui">社会</a></li>
+        <li><a href="#zhongguo">中国</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="guoji">
+        <div class="sec-head"><h2>国际</h2></div>
+
+        <article class="card">
+          <h3>印尼弗洛勒斯岛 7.7 级强震，死亡至少 51 人，约 5000 人转移</h3>
+          <p>周六清晨（当地约 5:58）浅源强震袭击东努沙登加拉省弗洛勒斯岛，海啸预警后解除。美联社周日报道死亡升至 51 人，约 900 栋房屋损毁、约 5000 人进临时安置点，滑坡切断道路；印尼地方媒体引述国家减灾署称死亡已至 53、伤 135，系该国 2022 年以来最致命地震。</p>
+          <p class="sources">来源：<a href="https://apnews.com/article/indonesia-flores-earthquake-landslide-bf1d024bdec7727094f8dc73d7dd5e34" target="_blank" rel="noopener noreferrer">美联社</a><span class="dot">·</span><a href="https://www.bbc.com/news/articles/c3v00w5ylw9o" target="_blank" rel="noopener noreferrer">BBC</a></p>
+        </article>
+
+        <article class="card">
+          <h3>俄乌隔夜大规模对打：基辅遭弹道导弹，莫斯科方向约 600 架无人机</h3>
+          <p>俄方袭击造成基辅书籍市场起火。BBC 称乌克兰至少 5 死、10 余人伤；俄方称防空击落 822 架无人机，莫斯科市长称约 600 架飞向首都，Wildberries 科列季诺仓库起火，罗斯托夫州称 5 人死亡。罗马尼亚国防部称北约任务下的西班牙 F-18 在加拉茨附近击落一架从摩尔多瓦进入领空的无人机；基辅独立报称过去一日乌境内至少 7 死、51 伤。</p>
+          <p class="sources">来源：<a href="https://www.bbc.com/news/articles/c1411pgje8xo" target="_blank" rel="noopener noreferrer">BBC</a><span class="dot">·</span><a href="https://www.aljazeera.com/news/2026/8/16/russian-strikes-kill-ukrainian-woman-as-nato-jet-downs-drone-over-romania" target="_blank" rel="noopener noreferrer">Al Jazeera</a></p>
+        </article>
+
+        <article class="card">
+          <h3>哈马斯领导人赴开罗会谈，库什纳下周访以、埃</h3>
+          <p>哈马斯政治领导人、首席谈判代表哈利勒·哈亚周日预计会见埃及情报局长拉沙德，这是他 7 月底接任后首次访埃。特朗普特使贾里德·库什纳下周将访以色列和埃及；内塔尼亚胡上周已公开拒绝一项 15 点方案。加沙卫生部门称周六以军袭击造成 2 死 14 伤。</p>
+          <p class="sources">来源：<a href="https://www.aljazeera.com/news/2026/08/16/hamas-leader-heads-to-cairo-for-gaza-talks-ahead-of-kushner-visit" target="_blank" rel="noopener noreferrer">Al Jazeera</a></p>
+        </article>
+
+        <article class="card">
+          <h3>匈牙利高速客车侧翻，12 名波兰朝圣者遇难</h3>
+          <p>周日约当地 1:00，一辆载 57 名乘客、2 名司机的波兰籍客车在布达佩斯以东约 140 公里 M3 高速驶入沟渠侧翻，警方初步认为司机睡着。匈救护车系统：1 人生命危险、9 人重伤、37 人轻伤。乘客自波黑朝圣返回，波兰总理图斯克已派专机。</p>
+          <p class="sources">来源：<a href="https://www.bbc.com/news/articles/ckg4424zd7go" target="_blank" rel="noopener noreferrer">BBC</a></p>
+        </article>
+      </section>
+
+      <section id="zhengzhi">
+        <div class="sec-head"><h2>政治</h2></div>
+
+        <article class="card">
+          <h3>美伊僵持：霍尔木兹通航谈判与“美国领土”言论对撞</h3>
+          <p>伊朗外交部发言人称与阿曼已就霍尔木兹航道路线图达成协议，但外长阿拉奇强调：航路技术谈判与海峡是否重开是两回事，并称尚未决定重启对美谈判。特朗普 14 日称“彻底击败伊朗后将宣布霍尔木兹为美国领土”；伊朗副外长回应海峡“过去是、现在是、将来也是伊朗的”。部分中文报道称临时安排 8 月 17 日到期，伊朗方面则否认存在需延期的 60 天停火。</p>
+          <p class="sources">来源：<a href="https://www.aljazeera.com/news/2026/08/15/iran-says-no-decision-yet-on-a-return-to-talks-with-the-us" target="_blank" rel="noopener noreferrer">Al Jazeera</a><span class="dot">·</span><a href="https://www.iranintl.com/en/202608156799" target="_blank" rel="noopener noreferrer">Iran International</a></p>
+        </article>
+
+        <article class="card">
+          <h3>卡塔尔否认扣押伊朗飞行员，德黑兰周日要求派调查组</h3>
+          <p>伊朗军方称 3 月空袭卡塔尔时 3 名飞行员被卡方活捉。卡塔尔外长发言人安萨里周六断然否认，称搜救仅寻获 1 名飞行员遗体并已联系移交。周日伊朗官员要求允许调查组入境。</p>
+          <p class="sources">来源：<a href="https://www.bbc.com/news/articles/cj4kk8kz271o" target="_blank" rel="noopener noreferrer">BBC</a></p>
+        </article>
+
+        <article class="card">
+          <h3>美“乔治·华盛顿”号航母驶离太平洋赴中东，西太暂无航母</h3>
+          <p>太平洋基地的“乔治·华盛顿”号已离开越南岘港，经马六甲海峡驶向中东，拟接替已超长部署的“亚伯拉罕·林肯”号。此举使西太平洋在未知时段内没有美军航母。</p>
+          <p class="sources">来源：<a href="https://apnews.com/article/aircraft-carriers-uss-abraham-lincoln-washington-iran-5366eba29f72b6b317416fde81d57a61" target="_blank" rel="noopener noreferrer">美联社</a></p>
+        </article>
+
+        <article class="card">
+          <h3>日本 8·15：高市早苗供奉祭祀费，多名阁僚参拜靖国；中方严正交涉</h3>
+          <p>8 月 15 日日本战败日，首相高市早苗向靖国神社供奉祭祀费，防卫大臣小泉进次郎等现任阁僚参拜。中国驻日使馆表示强烈愤慨，已向日方提出严正交涉。今年是东京审判开庭 80 周年。</p>
+          <p class="sources">来源：<a href="https://www2.xinhuanet.com/20260815/ea0c66795de148cfa957907c3b5bd135/c.html" target="_blank" rel="noopener noreferrer">新华社</a><span class="dot">·</span><a href="http://world.people.com.cn/n1/2026/0816/c1002-40780220.html" target="_blank" rel="noopener noreferrer">人民网</a></p>
+        </article>
+      </section>
+
+      <section id="caijing">
+        <div class="sec-head"><h2>财经</h2></div>
+        <p class="sec-note">今日休市。以下为周五（8 月 14 日）美股收盘。美股、欧股、A 股均休市。</p>
+
+        <article class="card">
+          <h3>美股自纪录高位回落，标普仍录得三连周上涨</h3>
+          <p>疲软零售销售与密歇根大学消费者信心走弱，叠加油价上扬。标普 500 报 7785.76（−0.17%）；道指 53732.41（−0.20%）；纳指 26729.16（−0.28%）。10 年期美债收益率升至约 4.69%。</p>
+          <p class="sources">来源：<a href="https://www.arkansasonline.com/news/2026/aug/15/wall-street-falls-from-record-after-economy-report/" target="_blank" rel="noopener noreferrer">AP</a></p>
+        </article>
+
+        <article class="card">
+          <h3>油价因霍尔木兹不确定性上涨；美国汽油均价约 4.07 美元</h3>
+          <p>布伦特收 88.52 美元/桶（+1.67%），WTI 82.40 美元（+1.42%）。AAA 8 月 16 日全美普通汽油均价约 4.0656 美元/加仑，称这是有记录以来最高的 8 月均价水平之一（去年同期约 3.16 美元）。</p>
+          <p class="sources">来源：<a href="https://economictimes.indiatimes.com/markets/us-stocks/news/oil-prices-rally-us-data-dents-chances-of-fed-rate-hike/articleshow/133256182.cms" target="_blank" rel="noopener noreferrer">Economic Times</a><span class="dot">·</span><a href="https://gasprices.aaa.com/" target="_blank" rel="noopener noreferrer">AAA</a></p>
+        </article>
+      </section>
+
+      <section id="keji">
+        <div class="sec-head"><h2>科技</h2></div>
+
+        <article class="card">
+          <h3>路透独家：美国拟要求伙伴在对华 AI 竞赛中“选边”</h3>
+          <p>国务院起草致 6 月“AI Opportunity Statement”35 个签署方的信函，警告若同时加入中方竞争性框架，可能被排除出美方主导的 Pax Silica。信函仍为草案、尚未确认发出。约二十余国已加入，包括日、澳、韩。</p>
+          <p class="sources">来源：<a href="https://www.reuters.com/world/china/us-tell-partners-they-must-pick-sides-ai-race-with-china-2026-08-14/" target="_blank" rel="noopener noreferrer">Reuters</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Anthropic 为遵守欧盟《人工智能法案》，全球给 Claude 文本加不可见水印</h3>
+          <p>为符合 8 月 2 日起适用的欧盟 AI 法案第 50 条，在文本中嵌入统计水印，文件则加 C2PA 签名元数据；因暂无法按地区隔离，故全球启用。不携带用户身份信息。</p>
+          <p class="sources">来源：<a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener noreferrer">Anthropic</a></p>
+        </article>
+
+        <article class="card">
+          <h3>中国成功发射卫星互联网低轨 24 组卫星</h3>
+          <p>北京时间 16 日 12:10，海南商业航天发射场长征十二号将卫星互联网低轨 24 组卫星送入预定轨道。此为长征系列第 663 次飞行。</p>
+          <p class="sources">来源：<a href="http://finance.people.com.cn/n1/2026/0816/c1004-40780423.html" target="_blank" rel="noopener noreferrer">人民网</a></p>
+        </article>
+      </section>
+
+      <section id="kexue">
+        <div class="sec-head"><h2>科学</h2></div>
+
+        <article class="card">
+          <h3>剑桥研究：同一“开关”在大脑不同部位开或关，都能减重</h3>
+          <p>《Nature Metabolism》小鼠实验：激活脑干 GIP 受体抑制食欲；阻断下丘脑同一受体则松开饱腹“刹车”。解释了 Mounjaro（激动）与试验药 MariTide（拮抗）为何都能减重。仍属动物实验。</p>
+          <p class="sources">来源：<a href="https://www.sciencedaily.com/releases/2026/08/260814011039.htm" target="_blank" rel="noopener noreferrer">ScienceDaily</a></p>
+        </article>
+      </section>
+
+      <section id="tiyu">
+        <div class="sec-head"><h2>体育</h2></div>
+
+        <article class="card">
+          <h3>孟加拉国达尔文九 wickets 击败澳大利亚，首次在澳本土赢得测试赛</h3>
+          <p>周日第四日，孟加拉国在达尔文马拉拉椭圆球场以 9 wickets 取胜。这是孟加拉国 26 年测试史在澳大利亚的首胜。第二场测试 8 月 22 日麦凯开打。</p>
+          <p class="sources">来源：<a href="https://apnews.com/article/cricket-australia-bangladesh-test-darwin-a78317e483ebfbee97b8b15436cce3d5" target="_blank" rel="noopener noreferrer">AP</a><span class="dot">·</span><a href="https://www.bbc.co.uk/sport/cricket/articles/cn8nn37v22lo" target="_blank" rel="noopener noreferrer">BBC Sport</a></p>
+        </article>
+
+        <article class="card">
+          <h3>UFC 330：马哈切夫卫冕次中量级，创 UFC 17 连胜纪录</h3>
+          <p>费城，周六夜。Islam Makhachev 一致判定击败 Ian Machado Garry，连胜 17 场，超过安德森·席尔瓦的 16 连胜。同场 Mackenzie Dern 卫冕女子草量级。</p>
+          <p class="sources">来源：<a href="https://www.ufc.com/news/ufc-330-islam-makhachev-vs-ian-machado-garry-results" target="_blank" rel="noopener noreferrer">UFC</a></p>
+        </article>
+
+        <article class="card">
+          <h3>辛辛那提：德约科维奇热浪中遭世界第 50 爆冷出局</h3>
+          <p>周六，39 岁德约科维奇在辛辛那提次轮负于阿根廷 Thiago Agustín Tirante。这是他 2005 年首征该站以来首次未能进入 32 强。</p>
+          <p class="sources">来源：<a href="https://www.bbc.com/sport/tennis/articles/cj033qggmv3o" target="_blank" rel="noopener noreferrer">BBC Sport</a></p>
+        </article>
+      </section>
+
+      <section id="shehui">
+        <div class="sec-head"><h2>社会</h2></div>
+        <p class="sec-note">匈牙利朝圣巴士惨剧见国际栏，此处不重复。</p>
+
+        <article class="card">
+          <h3>津巴布韦卡里巴湖渡轮翻覆死亡升至 72</h3>
+          <p>超载渡轮在卡里巴湖倾覆。死亡 72（含至少 18 名儿童），77 人获救。政府已宣布国家灾难。</p>
+          <p class="sources">来源：<a href="https://www.sabcnews.com/sabcnews/kariba-ferry-disaster-death-toll-rises-to-72/" target="_blank" rel="noopener noreferrer">SABC</a></p>
+        </article>
+
+        <article class="card">
+          <h3>中国队 IOI 2026 斩获 3 金 1 银、团体第一</h3>
+          <p>第 38 届国际信息学奥林匹克 15 日在塔什干落幕。许淇文 498.27 分全球第一，赵晟昊第三。</p>
+          <p class="sources">来源：<a href="https://www.xinhuanet.com/20260816/54a4ef818ddb448494f08115206b35ed/c.html" target="_blank" rel="noopener noreferrer">新华社</a></p>
+        </article>
+      </section>
+
+      <section id="zhongguo">
+        <div class="sec-head"><h2>中国</h2></div>
+
+        <article class="card">
+          <h3>朱镕基同志遗体将于 18 日在北京火化，天安门等地下半旗</h3>
+          <p>国务院原总理朱镕基 8 月 12 日在北京逝世，享年 98 岁。新华社 16 日宣布 18 日火化；当天首都天安门、新华门、人民大会堂、外交部，各省区市党委和政府所在地，港澳，边境口岸、对外海空港口及驻外使领馆下半旗志哀。</p>
+          <p class="sources">来源：<a href="http://www.ce.cn/xwzx/gnsz/szyw/202608/t20260816_3150109.shtml" target="_blank" rel="noopener noreferrer">新华社</a></p>
+        </article>
+
+        <article class="card">
+          <h3>厄瓜多尔总统诺沃亚抵京，首次对华国事访问</h3>
+          <p>16 日晨抵达，8 天行程。今年是中厄全面战略伙伴关系十周年；2025 年双边贸易额 173.3 亿美元。</p>
+          <p class="sources">来源：<a href="https://www.chinanews.com.cn/gn/2026/08-16/10678440.shtml" target="_blank" rel="noopener noreferrer">中新网</a></p>
+        </article>
+
+        <article class="card">
+          <h3>《生态环境法典》8 月 15 日起施行</h3>
+          <p>继民法典后中国第二部以“法典”命名的法律，也是世界上第一部以“生态环境”命名的法典；1242 条、5 编。</p>
+          <p class="sources">来源：<a href="https://www.jiemian.com/article/14917000.html" target="_blank" rel="noopener noreferrer">界面</a></p>
+        </article>
+
+        <article class="card">
+          <h3>河南周口贾鲁河溃口 15 日晚合龙，排涝仍在进行</h3>
+          <p>台风“白海豚”强降雨导致 13 日沙颍河支流贾鲁河周口段左堤溃口，最宽约 117 米；15 日 20:29 合龙。水利部：沙颍河周口段水位今明两天仍将超保。</p>
+          <p class="sources">来源：<a href="https://www.ce.cn/xwzx/gnsz/gdxw/202608/t20260816_3149443.shtml" target="_blank" rel="noopener noreferrer">人民日报</a></p>
+        </article>
+      </section>
+    </main>
+
+    <footer>由 dihua 整理 · 2026-08-16</footer>
+  </div>
+</body>
+</html>

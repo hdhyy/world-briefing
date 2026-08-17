@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>世界新闻简报 · 2026年8月17日</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --paper-2: #fbf7f0;
+      --ink: #1c1814;
+      --muted: #5e574f;
+      --faint: #8a8278;
+      --line: #ddd3c4;
+      --line-strong: #cfc3b2;
+      --accent: #8b2420;
+      --accent-soft: #f1e4dc;
+      --shadow: 0 1px 0 rgba(28, 24, 20, 0.04), 0 8px 24px rgba(28, 24, 20, 0.04);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 3.25rem;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 400px at 50% -80px, rgba(139, 36, 32, 0.05), transparent 60%),
+        var(--paper);
+      color: var(--ink);
+      font-family: system-ui, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover { text-decoration-thickness: 2px; }
+
+    .page {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 1.5rem 1.15rem 3.75rem;
+    }
+
+    .masthead {
+      padding: 0.35rem 0 1.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0 0 0.7rem;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.32em;
+    }
+
+    .kicker::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.28;
+    }
+
+    .masthead h1 {
+      margin: 0;
+      font-size: clamp(1.85rem, 5.5vw, 2.55rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+    }
+
+    .dateline {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: 0.01em;
+    }
+
+    .dateline .tz {
+      color: var(--faint);
+    }
+
+    .lede {
+      margin: 1.35rem 0 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+
+    .note {
+      margin: 0.95rem 0 0;
+      padding: 0.7rem 0.85rem;
+      background: var(--accent-soft);
+      border-left: 2px solid var(--accent);
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .flash {
+      margin: 0.7rem 0 0;
+      color: var(--faint);
+      font-size: 0.8rem;
+    }
+
+    .flash strong {
+      color: var(--accent);
+      font-weight: 650;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      margin-right: 0.4rem;
+    }
+
+    nav.toc {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 0 -1.15rem;
+      padding: 0.55rem 1.15rem;
+      background: color-mix(in srgb, var(--paper) 86%, white);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav.toc ul {
+      display: flex;
+      gap: 0.15rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    nav.toc ul::-webkit-scrollbar { display: none; }
+
+    nav.toc a {
+      display: inline-block;
+      padding: 0.28rem 0.62rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 550;
+      text-decoration: none;
+      white-space: nowrap;
+      border-radius: 999px;
+    }
+
+    nav.toc a:hover {
+      color: var(--accent);
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    section {
+      padding: 1.85rem 0 0.4rem;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.85rem;
+      margin: 0 0 1.05rem;
+    }
+
+    .sec-head h2 {
+      margin: 0;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+    }
+
+    .sec-head::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line-strong);
+      transform: translateY(-0.15em);
+    }
+
+    .sec-note {
+      margin: -0.35rem 0 1rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .card {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.15rem 1.15rem 1.1rem;
+      margin: 0 0 0.8rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.08rem;
+      font-weight: 650;
+      letter-spacing: -0.018em;
+      line-height: 1.38;
+    }
+
+    .card p {
+      margin: 0 0 0.75rem;
+      color: #2c2824;
+      font-size: 0.94rem;
+      line-height: 1.72;
+    }
+
+    .sources {
+      margin: 0;
+      color: var(--faint);
+      font-size: 0.78rem;
+    }
+
+    .sources a {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .sources .dot {
+      margin: 0 0.28rem;
+      color: var(--line-strong);
+    }
+
+    footer {
+      margin-top: 2.4rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--line);
+      color: var(--faint);
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    @media (min-width: 640px) {
+      .page { padding: 2.1rem 1.5rem 4.25rem; }
+      nav.toc { margin: 0 -1.5rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+      .lede { font-size: 1.08rem; }
+      .card { padding: 1.25rem 1.3rem 1.15rem; }
+      .card h3 { font-size: 1.14rem; }
+    }
+
+    @page { size: A4; margin: 12mm 12mm 14mm; }
+    @media print {
+      body { background: #f6f1e8; }
+      nav.toc { display: none !important; }
+      html { scroll-padding-top: 0; }
+      .page { padding-top: 0.5rem; padding-bottom: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <p class="kicker">WORLD BRIEFING</p>
+      <h1>世界新闻简报</h1>
+      <p class="dateline">2026年8月17日 星期一 <span class="tz">· 北京时间</span></p>
+      <p class="lede">美伊伊斯兰堡谅解备忘录今日到期、库什纳转场会见内塔尼亚胡，俄乌大规模空袭对打，印尼弗洛勒斯震后搜救仍在继续。</p>
+      <p class="note">亚洲周一早盘已开，美股、欧股尚未开盘。黄金为新加坡时间周一上午彭博报价；原油与美股指数为周五收盘，不作为“今日涨跌”。伤亡数字与霍尔木兹通航安排仍可能变化。</p>
+      <p class="flash"><strong>快讯</strong>美伊谅解备忘录到期含义双方说法不一；库什纳—内塔尼亚胡会谈定于今日；印尼地震、津巴布韦渡轮伤亡仍在核验。</p>
+    </header>
+
+    <nav class="toc" aria-label="栏目">
+      <ul>
+        <li><a href="#guoji">国际</a></li>
+        <li><a href="#zhengzhi">政治</a></li>
+        <li><a href="#caijing">财经</a></li>
+        <li><a href="#keji">科技</a></li>
+        <li><a href="#kexue">科学</a></li>
+        <li><a href="#tiyu">体育</a></li>
+        <li><a href="#shehui">社会</a></li>
+        <li><a href="#zhongguo">中国</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="guoji">
+        <div class="sec-head"><h2>国际</h2></div>
+
+        <article class="card">
+          <h3>印尼弗洛勒斯 7.7 级强震死亡升至 53 人，约 5000 人转移</h3>
+          <p>周六浅源强震袭击东努沙登加拉省弗洛勒斯岛。美联社周日报道救援队再找到 6 具遗体，死亡升至 53 人、伤 135 人；逾 900 栋房屋损毁、约 450 栋受损，约 5000 人进临时安置点。当局记录至少 995 次余震，部分道路仍被滑坡切断。伤亡数字仍可能变化。</p>
+          <p class="sources">来源：<a href="https://apnews.com/article/indonesia-flores-earthquake-landslide-bf1d024bdec7727094f8dc73d7dd5e34" target="_blank" rel="noopener">美联社</a><span class="dot">·</span><a href="https://www.abc.net.au/news/2026-08-16/evacuees-wait-for-aid-after-deadly-earthquake-in-indonesia/107043232" target="_blank" rel="noopener">ABC</a></p>
+        </article>
+
+        <article class="card">
+          <h3>俄乌大规模对打：莫斯科方向约 600 架无人机，基辅书籍市场起火</h3>
+          <p>俄国防部称隔夜击落 822 架乌克兰无人机；莫斯科市长称约 600 架飞向首都。BBC：俄方称至少 7 死（罗斯托夫州 5 人、别尔哥罗德州 1 人、莫斯科州 1 名 83 岁男子），Wildberries 科列季诺仓库起火。乌克兰境内同步遭袭，BBC 称至少 7 死、逾 39 伤，基辅书籍市场起火。西班牙 F-18 在罗马尼亚加拉茨附近击落一架进入领空的无人机。伤亡数字双方口径不一、仍在变。</p>
+          <p class="sources">来源：<a href="https://www.bbc.com/news/articles/c1411pgje8xo" target="_blank" rel="noopener">BBC</a><span class="dot">·</span><a href="https://apnews.com/article/russia-ukraine-war-01294bf8744282086e8f76c8130e16ba" target="_blank" rel="noopener">美联社</a></p>
+        </article>
+
+        <article class="card">
+          <h3>库什纳开罗会见哈马斯领导人，周一转场见内塔尼亚胡</h3>
+          <p>美联社：特朗普特使贾里德·库什纳周日在埃及与哈马斯领导人哈利勒·哈亚会谈逾两小时，托尼·布莱尔与“和平委员会”主任姆拉代诺夫定于周一会见以色列总理内塔尼亚胡。内塔尼亚胡上周公开拒绝美方支持的 15 点路线图，称哈马斯未完全解除武装前以军不撤出加沙。会谈结果仍待公布。</p>
+          <p class="sources">来源：<a href="https://www.pbs.org/newshour/world/kushner-has-rare-meeting-with-hamas-leader-on-gaza-road-map-a-meeting-with-netanyahu-is-next" target="_blank" rel="noopener">美联社 / PBS</a></p>
+        </article>
+
+        <article class="card">
+          <h3>巴控克什米尔抗议遭镇压，网络封锁下死亡数字难核验</h3>
+          <p>澳大利亚广播公司 17 日报道，联合人民行动委员会（JAAC）主导的抗议遭安全部队武力应对。JAAC 称自 6 月以来政府力量致死逾 83 人；巴方未公布官方死亡数字，否认该说法并称抗议者持械。互联网与手机封锁仍在，外国记者被限制实地采访。数字无法独立核实。</p>
+          <p class="sources">来源：<a href="https://www.abc.net.au/news/2026-08-17/pakistan-controlled-kashmir-violent-crackdown-against-protests/107035532" target="_blank" rel="noopener">澳大利亚广播公司</a></p>
+        </article>
+      </section>
+
+      <section id="zhengzhi">
+        <div class="sec-head"><h2>政治</h2></div>
+
+        <article class="card">
+          <h3>美伊伊斯兰堡谅解备忘录周一到期，双方对“停火”定义对撞</h3>
+          <p>半岛电视台：特朗普与伊朗总统佩泽希齐扬 6 月 17 日在伊斯兰堡签署的谅解备忘录定于周一到期，几乎看不到延期迹象。伊朗外长阿拉奇称备忘录是“结束战争”而非需延期的 60 天停火，并称尚未决定重启对美谈判；美方则视其为停火期限。霍尔木兹通航与封锁仍未解开。安排是否延期、海峡能否重开，仍在变。</p>
+          <p class="sources">来源：<a href="https://www.aljazeera.com/news/2026/8/16/us-iran-mou-is-set-to-expire-what-to-know" target="_blank" rel="noopener">半岛电视台</a></p>
+        </article>
+
+        <article class="card">
+          <h3>特朗普下令“大幅缩减”美韩联合军演，韩方称仍按原计划进行</h3>
+          <p>特朗普周日在 Truth Social 发文，以与金正恩“关系很好”、军演“昂贵且不友好”为由，令国防部长赫格塞斯“大幅缩减”原定周一启动、为期 11 天的“乙支自由盾牌”演习，并称韩国拒绝参与对伊朗“无核化”。韩国国防部回应演习将“按先前通报和日程进行”。约 1.8 万名韩军计划参加。</p>
+          <p class="sources">来源：<a href="https://www.bbc.com/news/articles/cx2lll7zvn0o" target="_blank" rel="noopener">BBC</a><span class="dot">·</span><a href="https://www.aljazeera.com/news/2026/8/17/trump-says-us-to-substantially-reduce-military-drills-with-south-korea" target="_blank" rel="noopener">半岛电视台</a></p>
+        </article>
+      </section>
+
+      <section id="caijing">
+        <div class="sec-head"><h2>财经</h2></div>
+        <p class="sec-note">亚洲周一早盘进行中；美股、欧股尚未开盘。黄金为新加坡时间 17 日上午彭博报价。原油与美股为周五（8 月 14 日）收盘。</p>
+
+        <article class="card">
+          <h3>现货黄金约 4376 美元/盎司，银价续涨</h3>
+          <p>彭博社数据（经《商业时报》转引）：新加坡时间周一 7:24，现货黄金报约 4376 美元/盎司，较上周五几乎持平；现货白银涨 0.6%，报 65.08 美元/盎司。上周金价累计上涨近 1%。交易员权衡美国零售销售与消费者信心走弱（抑制加息预期）与霍尔木兹能源风险。</p>
+          <p class="sources">来源：<a href="https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-nears-two-month-high-around-us4400-traders-weigh-us-fed-interest-rate-path" target="_blank" rel="noopener">彭博 / 商业时报</a></p>
+        </article>
+
+        <article class="card">
+          <h3>油价：周五布伦特收 88.52 美元；霍尔木兹风险仍在</h3>
+          <p>周五收盘（非今日涨跌）：布伦特 88.52 美元/桶（+1.67%），WTI 82.40 美元（+1.42%）。《商业时报》周一称，上周后段霍尔木兹附近再有船只遇袭，美国拟对伊朗加码经济措施。美伊谅解备忘录今日到期，通航安排仍不确定。</p>
+          <p class="sources">来源：<a href="https://economictimes.indiatimes.com/markets/us-stocks/news/oil-prices-rally-us-data-dents-chances-of-fed-rate-hike/articleshow/133256182.cms" target="_blank" rel="noopener">Economic Times</a><span class="dot">·</span><a href="https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-nears-two-month-high-around-us4400-traders-weigh-us-fed-interest-rate-path" target="_blank" rel="noopener">商业时报</a></p>
+        </article>
+
+        <article class="card">
+          <h3>美股周五自高位回落；日经周五收 68713.80</h3>
+          <p>周五美股收盘（非今日涨跌）：标普 500 报 7785.76（−0.17%）；道指 53732.41（−0.20%）；纳指 26729.16（−0.28%）。日经 225 官方数据：8 月 14 日收 68713.80。周一亚洲时段进行中，完整收盘待晚些时候。</p>
+          <p class="sources">来源：<a href="https://www.arkansasonline.com/news/2026/aug/15/wall-street-falls-from-record-after-economy-report/" target="_blank" rel="noopener">美联社</a><span class="dot">·</span><a href="https://indexes.nikkei.co.jp/en/nkave/archives/data" target="_blank" rel="noopener">日经指数</a></p>
+        </article>
+      </section>
+
+      <section id="keji">
+        <div class="sec-head"><h2>科技</h2></div>
+
+        <article class="card">
+          <h3>中国发射卫星互联网低轨 24 组卫星</h3>
+          <p>北京时间 16 日 12:10，海南商业航天发射场用长征十二号将卫星互联网低轨 24 组卫星送入预定轨道。《人民日报》17 日刊登该消息。科技日报：卫星由航天科技集团五院研制，此为长征系列第 663 次飞行。</p>
+          <p class="sources">来源：<a href="http://finance.people.com.cn/n1/2026/0817/c1004-40780571.html" target="_blank" rel="noopener">人民日报</a><span class="dot">·</span><a href="https://www.stdaily.com/web/gdxw/2026-08/16/content_564758.html" target="_blank" rel="noopener">科技日报</a></p>
+        </article>
+
+        <article class="card">
+          <h3>AI 从头设计出可感染大肠杆菌的噬菌体基因组</h3>
+          <p>《科学》论文（MedicalXpress / The Conversation 16 日报道）：研究团队用基因组语言模型 Evo 1、Evo 2 生成 ΦX174 类噬菌体全基因组，285 个候选中 16 个能感染大肠杆菌并复制。部分组合可克服对原噬菌体耐药的菌株。对象是感染细菌的噬菌体，并非人类致病病毒；作者强调生物安全审查。</p>
+          <p class="sources">来源：<a href="https://medicalxpress.com/news/2026-08-scientists-functioning-virus-ai.html" target="_blank" rel="noopener">MedicalXpress / The Conversation</a></p>
+        </article>
+      </section>
+
+      <section id="kexue">
+        <div class="sec-head"><h2>科学</h2></div>
+
+        <article class="card">
+          <h3>研究：五大灭绝前后地球化学出现“临界转变”信号</h3>
+          <p>ScienceAlert 16 日报道：过去约 5.39 亿年气候可分为五个相对稳定的区间，其间的急剧转变期生物圈更脆弱。研究构建“生物圈脆弱性”指标，发现五大集群灭绝也对应脆弱性峰值。作者强调这是历史分析，不能据此预测当前气候危机的结局，并称新生代背景脆弱性相对较低。</p>
+          <p class="sources">来源：<a href="https://www.sciencealert.com/critical-transition-earths-chemistry-wobbled-during-its-5-biggest-mass-extinctions" target="_blank" rel="noopener">ScienceAlert</a></p>
+        </article>
+
+        <article class="card">
+          <h3>全球极危物种蓝吻犁头鳐在三亚人工繁育成功</h3>
+          <p>央视新闻 16 日：三亚亚特兰蒂斯水族馆 7 月 31 日诞生 12 尾蓝吻犁头鳐幼体，至 8 月 12 日全部开口摄食，出生体长约 34–35 厘米。该物种被世界自然保护联盟列为极危，繁殖周期长、对环境扰动极敏感。中科院动物研究所将参与建立保育档案。</p>
+          <p class="sources">来源：<a href="https://cnews.chinadaily.com.cn/a/202608/16/WS6a817a25a310099e0fc7bf5c.html" target="_blank" rel="noopener">中国日报网 / 央视新闻</a></p>
+        </article>
+      </section>
+
+      <section id="tiyu">
+        <div class="sec-head"><h2>体育</h2></div>
+
+        <article class="card">
+          <h3>辛辛那提：萨巴伦卡第六个赛点过关，斯维亚特克、梅德韦杰夫晋级</h3>
+          <p>16 日，世界第一萨巴伦卡以 6-2、7-6（7-2）击败吉布森，第二盘用掉 6 个赛点。澳网冠军莱巴金娜、法网冠军安德烈耶娃、卫冕冠军斯维亚特克亦进第三轮。男单：奥热-阿利亚西姆伤愈首秀击败西西帕斯；梅德韦杰夫取得生涯第 100 场大师赛胜场。</p>
+          <p class="sources">来源：<a href="https://www.straitstimes.com/sport/tennis/sabalenka-squeezes-out-a-win-on-6th-match-point-in-cincinnati-rybakina-andreeva-also-make-third" target="_blank" rel="noopener">海峡时报 / AFP</a></p>
+        </article>
+
+        <article class="card">
+          <h3>孟加拉国达尔文九 wickets 击败澳大利亚，首次在澳本土赢得测试赛</h3>
+          <p>周日第四日，孟加拉国在达尔文马拉拉椭圆球场以 9 wickets 取胜，这是该队 26 年测试史在澳大利亚的首胜，也是对澳的第二场测试胜利。梅希迪·哈桑·米拉兹次局五 wickets。第二场测试 8 月 22 日麦凯开打。</p>
+          <p class="sources">来源：<a href="https://apnews.com/article/cricket-australia-bangladesh-test-darwin-a78317e483ebfbee97b8b15436cce3d5" target="_blank" rel="noopener">美联社</a></p>
+        </article>
+      </section>
+
+      <section id="shehui">
+        <div class="sec-head"><h2>社会</h2></div>
+
+        <article class="card">
+          <h3>津巴布韦卡里巴湖渡轮翻覆死亡升至至少 84 人</h3>
+          <p>半岛电视台：津巴布韦警方周日再找到 4 具遗体，死亡至少 84 人，搜救仍在进行。超载渡轮周二在卡里巴湖倾覆，载客或达 153 人、核定约 90 人；至少 18 名儿童遇难。总统姆南加古瓦已称事件暴露严重缺陷。死亡数字仍可能上升。</p>
+          <p class="sources">来源：<a href="https://www.aljazeera.com/news/2026/8/16/death-toll-rises-to-84-from-capsized-ferry-in-zimbabwe" target="_blank" rel="noopener">半岛电视台</a></p>
+        </article>
+
+        <article class="card">
+          <h3>匈牙利高速客车侧翻，12 名波兰朝圣者遇难</h3>
+          <p>周日约当地 1:00，一辆载 57 名乘客、2 名司机的波兰籍客车在布达佩斯以东约 140 公里 M3 高速驶入沟渠侧翻。警方初步认为司机睡着，司机已被拘留。匈救护车系统：1 人生命危险、9 人重伤、37 人轻伤。乘客自波黑朝圣返回。</p>
+          <p class="sources">来源：<a href="https://www.bbc.com/news/articles/ckg4424zd7go" target="_blank" rel="noopener">BBC</a><span class="dot">·</span><a href="https://apnews.com/article/hungary-tourist-bus-crash-poland-5d7ea3649f0af2dab9b45a08671f79b7" target="_blank" rel="noopener">美联社</a></p>
+        </article>
+      </section>
+
+      <section id="zhongguo">
+        <div class="sec-head"><h2>中国</h2></div>
+
+        <article class="card">
+          <h3>纪念江泽民同志诞辰 100 周年大会今日上午在京举行</h3>
+          <p>新华社预告：大会于 8 月 17 日上午 10 时在人民大会堂举行，习近平出席并发表重要讲话。中央广播电视总台、新华网现场直播，人民网、央视网等同步转播。本简报截稿时大会尚未开始。</p>
+          <p class="sources">来源：<a href="http://politics.people.com.cn/n1/2026/0815/c1024-40780197.html" target="_blank" rel="noopener">新华社 / 人民网</a></p>
+        </article>
+
+        <article class="card">
+          <h3>朱镕基同志遗体将于 18 日在北京火化，天安门等地下半旗</h3>
+          <p>国务院原总理朱镕基 8 月 12 日在北京逝世，享年 98 岁。新华社 16 日宣布 18 日火化；当天首都天安门、新华门、人民大会堂、外交部，各省区市党委和政府所在地，港澳，边境口岸、对外海空港口及驻外使领馆下半旗志哀。</p>
+          <p class="sources">来源：<a href="http://www.ce.cn/xwzx/gnsz/szyw/202608/t20260816_3150109.shtml" target="_blank" rel="noopener">新华社</a></p>
+        </article>
+
+        <article class="card">
+          <h3>河南周口贾鲁河溃口已合龙，13 支排涝队伍仍在作业</h3>
+          <p>《经济日报》17 日刊：8 月 15 日 20:29，周口川汇区贾鲁河东岸 117 米溃口合龙；13 日夜溃口后约 40 小时封堵。第五人民医院院区与一所驾校被淹，转移 781 人、无人员伤亡。应急管理部从豫陕苏皖鲁湘调派 13 支排涝队伍，堤身加固与市区排涝仍在进行。</p>
+          <p class="sources">来源：<a href="http://www.ce.cn/xwzx/gnsz/gdxw/202608/t20260817_3150174.shtml" target="_blank" rel="noopener">经济日报</a><span class="dot">·</span><a href="http://www.mem.gov.cn/xw/yjglbgzdt/202608/t20260815_680757.shtml" target="_blank" rel="noopener">应急管理部</a></p>
+        </article>
+
+        <article class="card">
+          <h3>厄瓜多尔总统诺沃亚抵京，首次对华国事访问</h3>
+          <p>16 日晨抵达，8 天行程。今年是中厄全面战略伙伴关系十周年；2025 年双边贸易额 173.3 亿美元。中国是厄第二大贸易伙伴。</p>
+          <p class="sources">来源：<a href="https://www.chinanews.com.cn/gn/2026/08-16/10678440.shtml" target="_blank" rel="noopener">中新网 / 央视新闻</a></p>
+        </article>
+      </section>
+    </main>
+
+    <footer>由 dihua 整理 · 2026-08-17</footer>
+  </div>
+</body>
+</html>
