@@ -257,10 +257,76 @@
       .card { padding: 1.25rem 1.3rem 1.15rem; }
       .card h3 { font-size: 1.14rem; }
     }
+
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin: 0 0 1.15rem;
+      font-size: 0.82rem;
+    }
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .site-nav a:hover { color: var(--accent); }
+    .site-nav .here { color: var(--ink); font-weight: 650; }
+    .site-nav .links { display: flex; gap: 1.1rem; }
+    .day-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 2.1rem 0 0;
+      padding-top: 1.05rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.88rem;
+    }
+    .day-nav a { text-decoration: none; }
+    .day-nav .gone { color: var(--faint); }
+    .archive-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.4rem 0 0;
+    }
+    .archive-list li {
+      margin: 0 0 0.7rem;
+    }
+    .archive-list a.row {
+      display: block;
+      padding: 0.95rem 1.05rem 0.9rem;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow);
+    }
+    .archive-list a.row:hover { border-color: var(--line-strong); }
+    .archive-list .when {
+      margin: 0;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.14em;
+    }
+    .archive-list .blurb {
+      margin: 0.35rem 0 0;
+      color: var(--ink);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
   </style>
 </head>
 <body>
   <div class="page">
+    <nav class="site-nav" aria-label="站点">
+      <a href="index.html">今日</a>
+      <div class="links">
+        <a href="archives.html">往期</a>
+      </div>
+    </nav>
     <header class="masthead">
       <p class="kicker">WORLD BRIEFING</p>
       <h1>世界新闻简报</h1>
@@ -457,6 +523,11 @@
       </section>
     </main>
 
+    <nav class="day-nav" aria-label="相邻日期">
+      <span class="gone">← 没有更早</span>
+      <a href="archives.html">全部往期</a>
+      <a href="2026-08-17.html">8月17日 →</a>
+    </nav>
     <footer>由 dihua 整理 · 2026-08-16</footer>
   </div>
 </body>

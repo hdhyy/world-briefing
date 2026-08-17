@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>往期 · 世界新闻简报</title>
+  <style>
+    :root {
+      --paper: #f6f1e8;
+      --paper-2: #fbf7f0;
+      --ink: #1c1814;
+      --muted: #5e574f;
+      --faint: #8a8278;
+      --line: #ddd3c4;
+      --line-strong: #cfc3b2;
+      --accent: #8b2420;
+      --accent-soft: #f1e4dc;
+      --shadow: 0 1px 0 rgba(28, 24, 20, 0.04), 0 8px 24px rgba(28, 24, 20, 0.04);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 400px at 50% -80px, rgba(139, 36, 32, 0.05), transparent 60%),
+        var(--paper);
+      color: var(--ink);
+      font-family: system-ui, "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-underline-offset: 0.18em; }
+    .page {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 1.5rem 1.15rem 3.75rem;
+    }
+    .masthead {
+      padding: 0.35rem 0 1.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0 0 0.7rem;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.32em;
+    }
+    .kicker::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.28;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.85rem, 5.5vw, 2.55rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+    }
+    .dateline {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    footer {
+      margin-top: 2.4rem;
+      color: var(--faint);
+      font-size: 0.78rem;
+    }
+
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin: 0 0 1.15rem;
+      font-size: 0.82rem;
+    }
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .site-nav a:hover { color: var(--accent); }
+    .site-nav .here { color: var(--ink); font-weight: 650; }
+    .site-nav .links { display: flex; gap: 1.1rem; }
+    .day-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 2.1rem 0 0;
+      padding-top: 1.05rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.88rem;
+    }
+    .day-nav a { text-decoration: none; }
+    .day-nav .gone { color: var(--faint); }
+    .archive-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.4rem 0 0;
+    }
+    .archive-list li {
+      margin: 0 0 0.7rem;
+    }
+    .archive-list a.row {
+      display: block;
+      padding: 0.95rem 1.05rem 0.9rem;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow);
+    }
+    .archive-list a.row:hover { border-color: var(--line-strong); }
+    .archive-list .when {
+      margin: 0;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 650;
+      letter-spacing: 0.14em;
+    }
+    .archive-list .blurb {
+      margin: 0.35rem 0 0;
+      color: var(--ink);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    @media (min-width: 640px) {
+      .page { padding: 2.1rem 1.5rem 4.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="site-nav" aria-label="站点">
+      <a href="index.html">今日</a>
+      <div class="links">
+        <a href="archives.html" class="here">往期</a>
+      </div>
+    </nav>
+    <header class="masthead">
+      <p class="kicker">ARCHIVE</p>
+      <h1>往期简报</h1>
+      <p class="dateline">共 2 期 · 最新 8月17日</p>
+    </header>
+    <main>
+      <ul class="archive-list">
+        <li>
+          <a class="row" href="2026-08-17.html">
+            <p class="when">2026年8月17日 星期一</p>
+            <p class="blurb">美伊伊斯兰堡谅解备忘录今日到期、库什纳转场会见内塔尼亚胡，俄乌大规模空袭对打，印尼弗洛勒斯震后搜救仍在继续。</p>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="2026-08-16.html">
+            <p class="when">2026年8月16日 星期日</p>
+            <p class="blurb">美伊围绕霍尔木兹海峡的僵局未解、俄乌双方大规模空袭对打、印尼弗洛勒斯 7.7 级强震死亡人数仍在上升，是今天全球最突出的三条主线。</p>
+          </a>
+        </li>
+      </ul>
+    </main>
+    <footer>由 dihua 整理</footer>
+  </div>
+</body>
+</html>
