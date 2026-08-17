@@ -173,8 +173,10 @@ def inject_page(path: Path, iso: str, all_dates: list[str]) -> None:
 
 
 def write_archives(all_dates: list[str]) -> None:
+    # 往期 = everything except the latest (today). Today lives on index.html.
+    past = all_dates[:-1]
     items = []
-    for iso in reversed(all_dates):
+    for iso in reversed(past):
         lede = extract_lede((ROOT / f"{iso}.html").read_text())
         items.append(
             f"""        <li>
@@ -184,7 +186,10 @@ def write_archives(all_dates: list[str]) -> None:
           </a>
         </li>"""
         )
-    body = "\n".join(items)
+    if items:
+        body = "\n".join(items)
+    else:
+        body = '        <li><p class="blurb">还没有往期，明天起会列在这里。</p></li>'
     latest = all_dates[-1]
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -272,7 +277,7 @@ def write_archives(all_dates: list[str]) -> None:
 {site_nav_html("archives")}    <header class="masthead">
       <p class="kicker">ARCHIVE</p>
       <h1>往期简报</h1>
-      <p class="dateline">共 {len(all_dates)} 期 · 最新 {label(latest)}</p>
+      <p class="dateline">共 {len(past)} 期 · 今天请看「今日」</p>
     </header>
     <main>
       <ul class="archive-list">
